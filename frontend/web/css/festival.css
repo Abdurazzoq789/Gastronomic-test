@@ -1,0 +1,102 @@
+
+.lola  {
+	clip-path: polygon(0% 4%, 100% 0%, 100% 100%, 0% 100%);
+}
+.card-data  {
+    font-family: CaviarDreams;
+    font-size: 1.125em;
+    font-weight: bold;
+    line-height: 2.22;
+    color: #7389e8;
+}
+.main-card .card-body  {
+    font-family: CaviarDreams;
+    font-size: 1.5em;
+    color: #9295b4;
+}
+.main-card a    {
+    padding: 0.7em 2em;
+    margin-top: 3em;
+    display: inline-block;
+
+}
+.absolute-img   {
+    position: absolute;
+    right: -16em;
+    bottom: -6em;
+    width: 27em;
+
+    
+}
+.absolute-img img   {
+    max-width: 100%;
+}
+.other  {
+    margin-top: 8em;
+}
+.other .main-card   {
+    margin-top: 3em;
+}
+.other .main-card a    {
+    padding: 0.5em 1.5em;
+}
+.count img  {
+    margin-right: 0.5em;
+}
+
+@media only screen and (max-width: 1366px)   {
+   .lola    {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+   }
+   .absolute-img    {
+    right: -12em;
+    bottom: -3em;
+    width: 19em;
+   }
+   .lola-text   {
+    padding: 0 0 0 5em;
+   }
+}
+
+@media only screen and (max-width: 905px)   {
+    .main-card  {
+        justify-content: center;
+    }
+    .lola    {
+     flex: 0 0 60%;
+     max-width: 60%;
+    }
+}
+@media only screen and (max-width: 768px)   {
+    .absolute-img {
+        right: 2em;
+        bottom: -7em;
+        width: 16em;
+    }
+}
+
+@media only screen and (max-width: 360px)   {
+    .absolute-img   {
+        display: none;
+    }
+    .main-card  {
+        justify-content: space-around;
+    }
+    .main-card .card-body   {
+        font-size: 16px;
+    }
+    .lola   {
+    flex: 0 0 100%;
+    max-width: 100%;
+    }
+    .lola-text   {
+        padding: 0 0 0 1em;
+       }
+       .other  {
+        margin-top: 2em;
+    }
+    .other .main-card .card-body    {
+        font-size: 1em;
+    }
+}
