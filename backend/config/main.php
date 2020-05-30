@@ -8,6 +8,8 @@ $params = array_merge(
 
 return [
     'id' => 'app-backend',
+    'name' => 'Gastronomic',
+    'language' =>'uz',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
@@ -46,7 +48,9 @@ return [
             'rules' => [
             ],
         ],
-        
+        'assetManager' => [
+            'appendTimestamp' => true,
+        ],
     ],
     'params' => $params,
 ];

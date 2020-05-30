@@ -21,8 +21,8 @@ class m130524_201442_init extends Migration
             'email' => $this->string()->notNull()->unique(),
 
             'status' => $this->smallInteger()->notNull()->defaultValue(10),
-            'created_at' => $this->timestamp()->null()->defaultExpression('CURRENT_TIMESTAMP'),
-            'updated_at' => $this->timestamp()->null()->defaultExpression('CURRENT_TIMESTAMP'),
+            'created_at' => $this->integer()->notNull(),
+            'updated_at' => $this->integer()->notNull(),
         ], $tableOptions);
     }
 
