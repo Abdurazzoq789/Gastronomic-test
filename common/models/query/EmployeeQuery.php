@@ -3,11 +3,11 @@
 namespace common\models\query;
 
 /**
- * This is the ActiveQuery class for [[Restaurant]].
+ * This is the ActiveQuery class for [[\common\models\Employee]].
  *
- * @see Restaurant
+ * @see \common\models\Employee
  */
-class RestaurantQuery extends \yii\db\ActiveQuery
+class EmployeeQuery extends \yii\db\ActiveQuery
 {
     /*public function active()
     {
@@ -16,7 +16,7 @@ class RestaurantQuery extends \yii\db\ActiveQuery
 
     /**
      * {@inheritdoc}
-     * @return Restaurant[]|array
+     * @return \common\models\Employee[]|array
      */
     public function all($db = null)
     {
@@ -25,7 +25,7 @@ class RestaurantQuery extends \yii\db\ActiveQuery
 
     /**
      * {@inheritdoc}
-     * @return Restaurant|array|null
+     * @return \common\models\Employee|array|null
      */
     public function one($db = null)
     {

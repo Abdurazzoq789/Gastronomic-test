@@ -3,17 +3,16 @@
 namespace backend\controllers;
 
 use Yii;
-use common\models\Restaurant;
-use common\models\RestaurantSearch;
-use yii\data\ActiveDataProvider;
+use common\models\Employee;
+use common\models\EmployeeSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * RestaurantController implements the CRUD actions for Restaurant model.
+ * EmployeeController implements the CRUD actions for Employee model.
  */
-class RestaurantController extends Controller
+class EmployeeController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -31,12 +30,12 @@ class RestaurantController extends Controller
     }
 
     /**
-     * Lists all Restaurant models.
+     * Lists all Employee models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new RestaurantSearch();
+        $searchModel = new EmployeeSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -46,7 +45,7 @@ class RestaurantController extends Controller
     }
 
     /**
-     * Displays a single Restaurant model.
+     * Displays a single Employee model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -59,13 +58,13 @@ class RestaurantController extends Controller
     }
 
     /**
-     * Creates a new Restaurant model.
+     * Creates a new Employee model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Restaurant();
+        $model = new Employee();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -77,7 +76,7 @@ class RestaurantController extends Controller
     }
 
     /**
-     * Updates an existing Restaurant model.
+     * Updates an existing Employee model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -97,7 +96,7 @@ class RestaurantController extends Controller
     }
 
     /**
-     * Deletes an existing Restaurant model.
+     * Deletes an existing Employee model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -111,15 +110,15 @@ class RestaurantController extends Controller
     }
 
     /**
-     * Finds the Restaurant model based on its primary key value.
+     * Finds the Employee model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Restaurant the loaded model
+     * @return Employee the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Restaurant::findOne($id)) !== null) {
+        if (($model = Employee::findOne($id)) !== null) {
             return $model;
         }
 

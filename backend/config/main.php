@@ -14,6 +14,7 @@ return [
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
     'modules' => [],
+    'defaultRoute'=>'restaurant',
     'components' => [
         'request' => [
             'baseUrl'=>'/admin',

@@ -20,14 +20,16 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
+        'pager' => [
+            'class' => \yii\bootstrap4\LinkPager::class
+        ],
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
             'photo',
-            'news_id',
+            'news.title',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            ['class' => 'common\grid\ActionColumn'],
         ],
     ]); ?>
 

@@ -11,7 +11,12 @@ use Yii;
  * @property string|null $name
  * @property string|null $region
  * @property string|null $address
+ * @property string|null $phone
+ * @property string|null $open
+ * @property string|null $close
+ * @property int|null $deliver
  *
+ * @property Employee[] $employees
  * @property Foods[] $foods
  * @property RestaurantPhoto[] $restaurantPhotos
  */
@@ -31,7 +36,9 @@ class Restaurant extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'region'], 'string', 'max' => 45],
+            [['open', 'close'], 'safe'],
+            [['deliver'], 'integer'],
+            [['name', 'region', 'phone'], 'string', 'max' => 45],
             [['address'], 'string', 'max' => 100],
         ];
     }
@@ -46,13 +53,27 @@ class Restaurant extends \yii\db\ActiveRecord
             'name' => 'Name',
             'region' => 'Region',
             'address' => 'Address',
+            'phone' => 'Phone',
+            'open' => 'Open',
+            'close' => 'Close',
+            'deliver' => 'Deliver',
         ];
+    }
+
+    /**
+     * Gets query for [[Employees]].
+     *
+     * @return \yii\db\ActiveQuery|EmployeeQuery
+     */
+    public function getEmployees()
+    {
+        return $this->hasMany(Employee::className(), ['restaurant_id' => 'id']);
     }
 
     /**
      * Gets query for [[Foods]].
      *
-     * @return \yii\db\ActiveQuery|\common\models\query\FoodsQuery
+     * @return \yii\db\ActiveQuery|FoodsQuery
      */
     public function getFoods()
     {
@@ -62,7 +83,7 @@ class Restaurant extends \yii\db\ActiveRecord
     /**
      * Gets query for [[RestaurantPhotos]].
      *
-     * @return \yii\db\ActiveQuery|\common\models\query\RestaurantPhotoQuery
+     * @return \yii\db\ActiveQuery|RestaurantPhotoQuery
      */
     public function getRestaurantPhotos()
     {
@@ -71,7 +92,7 @@ class Restaurant extends \yii\db\ActiveRecord
 
     /**
      * {@inheritdoc}
-     * @return \common\models\query\RestaurantQuery the active query used by this AR class.
+     * @return RestaurantQuery the active query used by this AR class.
      */
     public static function find()
     {

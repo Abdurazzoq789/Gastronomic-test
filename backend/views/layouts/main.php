@@ -22,6 +22,8 @@ AppAsset::register($this);
     <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -36,19 +38,22 @@ AppAsset::register($this);
         ],
     ]);
     $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
+        ['label' => 'Restaurant', 'url' => ['/restaurant/index']],
+        ['label' => 'Foods', 'url' => ['/foods/index']],
+        ['label' => 'Festival', 'url' => ['/festival/index']],
+        ['label' => 'News', 'url' => ['/news/index']],
+        ['label' => 'Employee', 'url' => ['/employee/index']],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
     } else {
-        $menuItems[] = '<li>'
-            . Html::beginForm(['/site/logout'], 'post')
-            . Html::submitButton(
-                'Logout (' . Yii::$app->user->identity->username . ')',
-                ['class' => 'btn btn-link logout']
-            )
-            . Html::endForm()
-            . '</li>';
+        $menuItems[] = [
+            'label' => 'Logout ('.Yii::$app->user->identity->username.')',
+            'url' => ['/site/logout'],
+            'linkOptions' => [
+                'data-method' => 'post'
+            ]
+        ];
     }
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav ml-auto'],
