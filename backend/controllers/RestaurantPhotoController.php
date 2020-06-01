@@ -8,7 +8,7 @@ use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
+use yii\web\UploadedFile;
 /**
  * RestaurantPhotoController implements the CRUD actions for RestaurantPhoto model.
  */
@@ -17,6 +17,9 @@ class RestaurantPhotoController extends Controller
     /**
      * {@inheritdoc}
      */
+
+    public $file;
+
     public function behaviors()
     {
         return [
@@ -66,9 +69,18 @@ class RestaurantPhotoController extends Controller
     {
         $model = new RestaurantPhoto();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        }
+        if ($model->load(Yii::$app->request->post())) {
+
+        $model->file = UploadedFile::getInstance($model,'file');
+        $imageName = $model->file->baseName;
+        $model->file->saveAs('uploads/'.$imageName.'.'.$model->file->extension );
+
+
+        $model->photo = 'uploads/'.$imageName.'.'.$model->file->extension;
+        $model->save();
+        
+        return $this->redirect(['view', 'id' => $model->id]);
+    }
 
         return $this->render('create', [
             'model' => $model,
@@ -86,7 +98,16 @@ class RestaurantPhotoController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())) {
+
+            $model->file = UploadedFile::getInstance($model,'file');
+            $imageName = $model->file->baseName;
+            $model->file->saveAs('uploads/'.$imageName.'.'.$model->file->extension );
+
+
+            $model->photo = 'uploads/'.$imageName.'.'.$model->file->extension;
+            $model->save();
+            
             return $this->redirect(['view', 'id' => $model->id]);
         }
 

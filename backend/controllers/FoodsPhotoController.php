@@ -8,6 +8,7 @@ use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * FoodsPhotoController implements the CRUD actions for FoodsPhoto model.
@@ -66,8 +67,18 @@ class FoodsPhotoController extends Controller
     {
         $model = new FoodsPhoto();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post())) {
+
+        $model->file = UploadedFile::getInstance($model,'file');
+        $imageName = $model->file->baseName;
+        $model->file->saveAs('uploads/'.$imageName.'.'.$model->file->extension );
+
+
+        $model->photo = 'uploads/'.$imageName.'.'.$model->file->extension;
+        $model->save();
+        
+        return $this->redirect(['view', 'id' => $model->id]);
+
         }
 
         return $this->render('create', [

@@ -15,6 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?= Html::a('Create Festival', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('FestivalPhoto', ['festival-photo/index'], ['class' => 'btn btn-success']) ?>
     </p>
 
 

@@ -18,6 +18,8 @@ class FestivalPhoto extends \yii\db\ActiveRecord
     /**
      * {@inheritdoc}
      */
+    public $file;
+
     public static function tableName()
     {
         return '{{%festivalPhoto}}';
@@ -32,6 +34,7 @@ class FestivalPhoto extends \yii\db\ActiveRecord
             [['festival_id'], 'required'],
             [['festival_id'], 'integer'],
             [['photo'], 'string', 'max' => 45],
+            [['file'],'file'],
             [['festival_id'], 'exist', 'skipOnError' => true, 'targetClass' => Festival::className(), 'targetAttribute' => ['festival_id' => 'id']],
         ];
     }
@@ -43,7 +46,7 @@ class FestivalPhoto extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'photo' => 'Photo',
+            'file' => 'Photo',
             'festival_id' => 'Festival ID',
         ];
     }

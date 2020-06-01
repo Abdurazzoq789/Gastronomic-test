@@ -15,6 +15,8 @@ use Yii;
  */
 class FoodsPhoto extends \yii\db\ActiveRecord
 {
+
+    public $file;
     /**
      * {@inheritdoc}
      */
@@ -29,6 +31,7 @@ class FoodsPhoto extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['file'],'file'],
             [['foods_id'], 'required'],
             [['foods_id'], 'integer'],
             [['photo'], 'string', 'max' => 45],
@@ -43,9 +46,19 @@ class FoodsPhoto extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'photo' => 'Photo',
+            'file' => 'Photo',
             'foods_id' => 'Foods ID',
         ];
+    }
+    public function upload()
+    {
+        if ($this->validate()) {
+            $this->imageFile->saveAs('uploads/' . $this->imageFile->baseName . '.' . $this->imageFile->extension);
+            $this->photo = 'uploads/' . $this->imageFile->baseName . '.' . $this->imageFile->extension;
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**

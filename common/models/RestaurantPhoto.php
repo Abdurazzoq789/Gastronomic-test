@@ -15,6 +15,8 @@ use Yii;
  */
 class RestaurantPhoto extends \yii\db\ActiveRecord
 {
+
+    public $file;
     /**
      * {@inheritdoc}
      */
@@ -29,6 +31,7 @@ class RestaurantPhoto extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['file'],'file'],
             [['restaurant_id'], 'required'],
             [['restaurant_id'], 'integer'],
             [['photo'], 'string', 'max' => 45],
@@ -43,7 +46,7 @@ class RestaurantPhoto extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'photo' => 'Photo',
+            'file' => 'Photo',
             'restaurant_id' => 'Restaurant ID',
         ];
     }
