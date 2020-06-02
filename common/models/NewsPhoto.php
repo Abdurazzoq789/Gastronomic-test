@@ -15,6 +15,8 @@ use Yii;
  */
 class NewsPhoto extends \yii\db\ActiveRecord
 {
+
+    public $file;
     /**
      * {@inheritdoc}
      */
@@ -29,6 +31,7 @@ class NewsPhoto extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['file'],'file'],
             [['news_id'], 'required'],
             [['news_id'], 'integer'],
             [['photo'], 'string', 'max' => 45],

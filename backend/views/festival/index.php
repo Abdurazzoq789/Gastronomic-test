@@ -30,6 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'title',
             'date',
             'description:ntext',
+            
 
             ['class' => 'common\grid\ActionColumn'],
         ],

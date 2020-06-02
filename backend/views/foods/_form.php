@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
 use yii\bootstrap4\ActiveForm;
 use common\models\Restaurant;
+use mihaildev\ckeditor\CKEditor;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Foods */
@@ -16,13 +17,23 @@ use common\models\Restaurant;
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'description')->widget(CKEditor::className(),[
+    'editorOptions' => [
+        'preset' => 'full',
+        'inline' => false,
+    ],
+    ]);?>
 
     <?= $form->field($model, 'type')->dropDownList(
             ['Ovqat' => 'Ovqat', 'Salat' => 'Salat', 'Desert' => 'Desert', 'Ichimlik' => 'Ichimlik']
     );?>
-
-    <?= $form->field($model, 'ingredient')->textarea(['rows' => 6]) ?>
+    
+    <?= $form->field($model, 'ingredient')->widget(CKEditor::className(),[
+    'editorOptions' => [
+        'preset' => 'full',
+        'inline' => false,
+    ],
+    ]);?>
 
     <?= $form->field($model, 'restaurant_id')->dropDownList(
         ArrayHelper::map(Restaurant::find()->all(),'id','name'),

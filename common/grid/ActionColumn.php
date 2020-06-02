@@ -10,7 +10,7 @@ class ActionColumn extends \yii\grid\ActionColumn
 
 	protected function initDefaultButtons()
     {
-        $this->initDefaultButton('view', 'far fa-eye');
+        // $this->initDefaultButton('view', 'far fa-eye');
         $this->initDefaultButton('update', 'far fa-edit');
         $this->initDefaultButton('delete', 'fas fa-trash', [
             'data-confirm' => Yii::t('yii', 'Are you sure you want to delete this item?'),
@@ -23,9 +23,9 @@ class ActionColumn extends \yii\grid\ActionColumn
         if (!isset($this->buttons[$name]) && strpos($this->template, '{' . $name . '}') !== false) {
             $this->buttons[$name] = function ($url, $model, $key) use ($name, $iconName, $additionalOptions) {
                 switch ($name) {
-                    case 'view':
-                        $title = Yii::t('yii', 'View');
-                        break;
+                    // case 'view':
+                    //     $title = Yii::t('yii', 'View');
+                    //     break;
                     case 'update':
                         $title = Yii::t('yii', 'Update');
                         break;

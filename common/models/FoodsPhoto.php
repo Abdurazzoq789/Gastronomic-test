@@ -50,16 +50,6 @@ class FoodsPhoto extends \yii\db\ActiveRecord
             'foods_id' => 'Foods ID',
         ];
     }
-    public function upload()
-    {
-        if ($this->validate()) {
-            $this->imageFile->saveAs('uploads/' . $this->imageFile->baseName . '.' . $this->imageFile->extension);
-            $this->photo = 'uploads/' . $this->imageFile->baseName . '.' . $this->imageFile->extension;
-            return true;
-        } else {
-            return false;
-        }
-    }
 
     /**
      * Gets query for [[Foods]].
@@ -70,6 +60,7 @@ class FoodsPhoto extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Foods::className(), ['id' => 'foods_id']);
     }
+
 
     /**
      * {@inheritdoc}

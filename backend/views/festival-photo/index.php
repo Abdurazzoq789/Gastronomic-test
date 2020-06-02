@@ -30,7 +30,14 @@ $this->params['breadcrumbs'][] = $this->title;
                 'value' => 'festival.title'
             ],
 
-            'photo',
+            [
+                'attribute' => 'photo',
+                'format' => 'html',    
+                'value' => function ($data) {
+                    return Html::img(Yii::getAlias('@web').'/'. $data['photo'],
+                        ['width' => '70px']);
+                },
+            ],
 
             ['class' => 'common\grid\ActionColumn'],
         ],

@@ -26,14 +26,13 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
             [
-                'attribute' => 'Restaran',
-                'value' => 'restaurant.name'
+                'attribute' => 'restaurant_id',
+                'value' => 'restaurant.name',
+                'header' => 'Restoran',
             ],
 
             'name',
-            'description:ntext',
             'type',
-            'ingredient',
             // 'restaurant.name',
 
             [
