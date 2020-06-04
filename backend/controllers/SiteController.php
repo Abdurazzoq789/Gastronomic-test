@@ -6,6 +6,11 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\LoginForm;
+use common\models\Restaurant;
+use common\models\Foods;
+use common\models\News;
+use common\models\Festival;
+
 
 /**
  * Site controller
@@ -60,7 +65,10 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $restaurants = Restaurant::find()->orderBy(['id' => SORT_DESC])->limit(4)->all();
+        return $this->render('index',[
+            'restaurants' => $restaurants,
+        ]);
     }
 
     /**

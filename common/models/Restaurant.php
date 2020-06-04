@@ -40,6 +40,7 @@ class Restaurant extends \yii\db\ActiveRecord
             [['deliver'], 'integer'],
             [['name', 'region', 'phone'], 'string', 'max' => 45],
             [['address'], 'string', 'max' => 100],
+            [['description'],'string'],
         ];
     }
 
@@ -57,6 +58,7 @@ class Restaurant extends \yii\db\ActiveRecord
             'open' => 'Open',
             'close' => 'Close',
             'deliver' => 'Deliver',
+            'description' => 'Description',
         ];
     }
 

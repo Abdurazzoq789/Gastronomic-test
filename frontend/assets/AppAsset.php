@@ -9,33 +9,27 @@ use yii\web\AssetBundle;
  */
 class AppAsset extends AssetBundle
 {
-    public $basePath = '@webroot';
-    public $baseUrl = '@web';
+    public $sourcePath = '@frontend/assets/front';
+
     public $css = [
-        'css/site.css',
-        // 'css/animate.css',
-        // 'css/bootstrap.min.css',
-        // 'css/festival.css',
-        // 'css/food.css',
-        // 'css/kontakt.css',
-        // 'css/novosti.css',
-        // 'css/novostiPodrobiye.css',
-        // 'css/Onas.css',
-        // 'css/owl.carusel.default.css',
-        // 'css/resposive.css',
-        // 'css/rest1.css',
-        // 'css/salat.css',
-        // 'css/styles.css',
-        // 'css/styles2.css',
-        // 'css/top10.css',
-        // 'css/topRest.css',
-        // 'css/owl.carusel.min.css',
+        'css/bootstrap.min.css',
+        'fa/css/all.min.css',
+        'css/owl.carousel.min.css',
+        'css/owl.theme.default.min.css',
+        'css/animate.css',
+        'css/styles2.css',
+        'css/responsive.css',
     ];
+
     public $js = [
-        // 'js/'
+        'js/bootstrap.bundle.min.js',
+        'js/owl.carousel.min.js',
+        'js/Cantrol.js',
+        'js/myJS.js',
     ];
+
     public $depends = [
         'yii\web\YiiAsset',
-        'yii\bootstrap4\BootstrapAsset',
+//        'yii\bootstrap\BootstrapAsset',
     ];
 }

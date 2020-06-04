@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="92.264" height="109.631" viewBox="0 0 92.264 109.631">
+    <defs>
+        <style>
+            .prefix__cls-1{stroke:#fff;stroke-width:5px}
+        </style>
+    </defs>
+    <g id="prefix___14-formal" data-name="14-formal" transform="translate(-13.44 2.548)">
+        <path id="prefix__Path_120" d="M102.452 10.707a4.358 4.358 0 00-3.659-1.991H85.72V4.358A4.358 4.358 0 0079.744.311L59.574 8.38 39.4.311a4.358 4.358 0 00-5.976 4.046v4.358H20.356a4.358 4.358 0 00-3.976 6.146l39.22 87.153a4.358 4.358 0 007.947 0l39.219-87.153a4.358 4.358 0 00-.312-4.154zM77 10.794v4.558l-5.7-2.279zm-34.861 0l5.7 2.279-5.7 2.279zm17.435 78.813L27.1 17.43h6.333v4.358a4.4 4.4 0 005.967 4.046l20.17-8.068 20.17 8.068a4.4 4.4 0 005.976-4.046V17.43h6.333z" class="prefix__cls-1" data-name="Path 120"/>
+        <circle id="prefix__Ellipse_22" cx="4" cy="4" r="4" class="prefix__cls-1" data-name="Ellipse 22" transform="translate(55.571 26.292)"/>
+        <circle id="prefix__Ellipse_23" cx="4" cy="4" r="4" class="prefix__cls-1" data-name="Ellipse 23" transform="translate(55.571 43.292)"/>
+        <circle id="prefix__Ellipse_24" cx="4" cy="4" r="4" class="prefix__cls-1" data-name="Ellipse 24" transform="translate(55.571 61.292)"/>
+    </g>
+</svg>

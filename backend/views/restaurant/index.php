@@ -32,11 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'name',
             'region',
-            'address',
-            'phone',
-            'open',
-            'close',
-            'deliver',
+            'description',
 
             ['class' => 'common\grid\ActionColumn'],
         ],

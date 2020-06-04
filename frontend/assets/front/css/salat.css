@@ -1,0 +1,64 @@
+.salat  {
+    margin-top: 5em;
+}
+.salat-item {
+    margin-bottom: 1.5em;
+}
+.salat-img  {
+    border: 1px solid #dea04a;;
+    border-radius: 14px;
+    object-fit: contain;
+    cursor: pointer;
+}
+.salat-img img  {
+    object-fit: contain;
+    max-width: 100%;
+    width: 100%;
+    height: 150px;
+}
+.salat-name {
+    font-family: CaviarDreams;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 2;
+    text-align: center;
+    color:#7389e8;
+}
+.salat-price    {
+    font-family: CeraPro;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 2;
+    text-align: center;
+    color: #dea04a;
+}
+.modal-content  img {
+    max-width: 100%;
+    width: 100%;
+}
+.modal-content  {
+    background: transparent;
+    border: 0;
+}
+.modal-content .salat-title {
+    font-family: CeraPro;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 1.33;
+    color: #dea04a;
+}
+.modal-content .about-salat {
+    font-family: CaviarDreams;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.63;
+    color: #000000;
+    padding-bottom: 1em;
+}
+.modal-header .close    {
+    background: #fff;
+    opacity: 1;
+    border-radius: 50%;
+    padding: 9px 17px 16px 17px;
+}
+

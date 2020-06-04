@@ -1,0 +1,329 @@
+.row .rest-header    {
+    background: url(/images/rest-haeder-bg.png) no-repeat center center / cover;
+    padding: 60px 35px;
+}
+.row .about-rest {
+    background-color: #fff;
+    background: url(/images/about-rest-bg.png) no-repeat bottom right / contain , #fff;
+    background-size: 165px;
+    padding: 35px 45px;
+}
+.rest-name  {
+    font-family: CeraPro;
+    font-size: 40px;
+    color: #dea04a;
+}
+.about-rest .title  {
+    opacity: 0.5;
+    font-family: CaviarDreams;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #302f2e;
+    font-weight: bold;
+}
+.about-rest .main   {
+    font-family: CaviarDreams;
+    font-size: 18px;
+    line-height: 1.33;
+    color: #302f2e;
+    font-weight: bold;
+  
+}
+.rest-grid   {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #7389e8;
+    grid-template-columns: repeat(auto-fit, 150px);
+    grid-template-rows: repeat(1, auto);
+    padding: 2em;
+    clip-path: polygon(0% 7%, 100% 0%, 100% 100%, 0% 100%);
+    grid-gap: 1em;
+
+}
+.rest-grid a {
+    font-family: CaviarDreams;
+    font-size: 1.2em;
+    font-weight: bold;
+    line-height: 3.18;
+    color: #ffffff;
+    border-bottom: 1px dashed #fff;
+    text-align: center      ;
+    margin: 0 10px;
+    padding: 0 10px;
+}
+.rest-grid a:hover, .rest-grid a.active  {
+    background: #ffffff;
+    color:  #7389e8;
+    border-radius: 4px;
+}
+.brand-food img {
+    max-width: 100%;
+    width: 100%;
+}
+.small-img  {
+    height: min-content;
+    height: -moz-min-content;
+    margin-top: 10em;
+}
+.brend-img-title  a  {
+    font-family: CaviarDreams;
+    font-size: 1.3em;
+    font-weight: bold;
+    line-height: 1.54;
+    color: #000000;
+}
+.brend-img-title a:hover {
+    color: #000000;
+}
+.modal-content span img {
+    width: 0.8em;
+}
+.brend-food-img {
+    position: relative;
+}
+.absolute-food  {
+    position: absolute;
+    
+}
+
+ .absolute-blyuda {
+    position: absolute;
+    top: 42%;
+    right: 17%;
+    font-family: CaviarDreams;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 0.9;
+    color: #000000;
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+ .absolute-food-name  {
+    position: absolute ;
+    top: 50%;
+    right: 10%;
+    font-family: CeraPro;
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 0.75;
+    padding: 0.5em 3em;
+    text-align: center;
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.rest-text  {
+    font-family: CaviarDreams;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 1.69;
+    color: #000000;
+    text-align: left;
+}
+.rest-like  {
+    margin-top: 5em;
+}
+.rest-like-title    {
+    font-family: CaviarDreams;
+    font-size: 42px;
+    font-weight: bold;
+    line-height: 1.29;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 1em;
+}
+.like-panel-text {
+    font-family: CaviarDreams;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 1.25;
+    text-align: center;
+    color: #dea04a;
+}
+.like-panel-img {
+    height: fit-content;
+    height: -moz-fit-content;
+}
+.ofitsant-section   {
+    margin-top: 8em;
+}
+.ofitsant-title {
+    font-family: CaviarDreams;
+    font-size: 42px;
+    font-weight: bold;
+    line-height: 1.29;
+    text-align: center;
+    color: #000000;
+}
+.ofitsant-card  {
+    border: none !important;
+    border-radius: 0;
+    text-align: center;
+}
+.ofitsant-card .card-img  img   {
+    max-width: 100%;
+    width: 100%;
+}
+.ofitsant-card .name {
+    font-family: CaviarDreams;
+    font-size: 23px;
+    font-weight: bold;
+    line-height: 1;
+    margin-top: 1em;
+}
+.ofitsant-card .job {
+    font-family: CaviarDreams;
+    font-size: 20px;
+    font-weight: bold;
+    color: #dea04a;
+}
+.like-button img    {
+    max-width: 100%;
+    width: 100%;
+}
+.like-button    {
+    position: relative;
+}
+
+.clicked    {
+    display: none;
+}
+.col-like   .like-button   img {
+    cursor: pointer;
+}
+.like-count {
+    font-family: CeraPro;
+    font-size: 82px;
+    font-weight: bold;
+    line-height: 0.49;
+    text-align: center;
+    color: #7389e8;
+    position: absolute;
+    top: 37%;
+    left: 0%; 
+    display: none;
+}
+.like-count p   {
+    font-family: CaviarDreams;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 1.33;
+    text-align: center;
+    color: #302f2e;
+    margin-top: 0.5em;
+}
+.animate    {
+    animation: likeAnimate ease 1s;
+    animation-fill-mode: forwards;
+}
+.countAnim  {
+    animation: countAnimate ease 0.5s;
+    animation-fill-mode: forwards;
+}
+
+ @keyframes countAnimate  {
+        from {
+            opacity: 1;
+        }
+        to  {
+            opacity: 0;
+        }
+ } 
+ @media only screen and (max-width: 1100px)     {
+    .like-panel-text {
+        font-size: 25px;
+    }
+    .like-count {
+        font-size: 49px;
+    }
+ }
+ @media only screen and (max-width: 900px)  {
+    .ofitsant-card  {
+        margin-bottom: 2em;
+    }
+    .like-panel-text {
+        font-size: 22px;
+ }
+
+ @media only screen and (max-width: 400px)  {
+    .rest-grid {
+        grid-template-columns: repeat(auto-fit, 138px);
+        clip-path: polygon(0% 5%, 100% 0%, 100% 100%, 0% 100%);
+        grid-gap: 1em;
+    }
+    .about-rest .title {
+        font-size: 16px;
+        margin: 0;
+    }
+    .rest-header    {
+        padding: 1em;
+    }
+    .about-rest {
+        margin: 0 auto;
+    }
+    .rest-name  {
+        font-size: 25px;
+    }
+    .pad-0  {
+        padding: 0;
+    }
+    .rest-grid  {
+        padding: 1em;
+    }
+    .absolute-food-name {
+        padding: 0.5em 1em;
+        font-size: 27px;
+    }
+    .absolute-blyuda {
+        top: 42%;
+        right: 6%;
+        font-size: 16px;
+ }
+    .brend-img-title {
+        font-size: 18px;
+    }
+    .small-img {
+        margin: 0;
+    }
+    .rest-text {
+        margin-top: 2em;
+        font-size: 20px;
+    }
+    .rest-like-title {
+        font-size: 28px;
+        margin-bottom: 0;
+    }
+   
+    .like-panel-text {
+        font-size: 14px;
+    }
+    .like-count {
+        font-size: 38px;
+        top: 25%;
+        left: 11%;
+    }
+    .ofitsant-section  {
+        margin-top: 5em;
+    }
+    .ofitsant-card {
+        margin-bottom: 2em;
+    }
+    .ofitsant-title {
+        font-size: 26px;
+    }
+    .rest-like-section  {
+        padding: 0;
+    }
+    .col-img, .col-text, .col-like {
+        padding: 0;
+        margin: 0;
+    }
+    .like-count p {
+        font-size: 20px;
+    }
+}

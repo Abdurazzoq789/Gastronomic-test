@@ -1,11 +1,13 @@
 <?php
 
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
+use yii\bootstrap4\ActiveForm;
+use mihaildev\ckeditor\CKEditor;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Restaurant */
-/* @var $form yii\widgets\ActiveForm */
+/* @var $form yii\bootstrap4\ActiveForm */
 ?>
 
 <div class="restaurant-form">
@@ -13,6 +15,13 @@ use yii\widgets\ActiveForm;
     <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'description')->widget(CKEditor::className(),[
+    'editorOptions' => [
+        'preset' => 'full',
+        'inline' => false,
+    ],
+    ]);?>
 
     <?= $form->field($model, 'region')->textInput(['maxlength' => true]) ?>
 

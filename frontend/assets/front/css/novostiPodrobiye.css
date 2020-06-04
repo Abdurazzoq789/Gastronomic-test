@@ -1,0 +1,85 @@
+.podrobnee-title    {
+    font-family: CaviarDreams;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.67;
+    color: #dea04a;
+}
+.podrobnee-theme    {
+    font-family: CeraPro;
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 1.36;
+    color: #302f2e;
+    margin-bottom: 1em;
+}
+.podrobnee-about    {
+    font-family: CaviarDreams;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.5;
+    color: #dea04a;
+}
+.social-pod a {
+    margin-left: 1em;
+}
+.pod-img img  {
+    max-width: 100%;
+    width: 100%;
+}
+.pod-card-text {
+    font-family: CaviarDreams !important;
+    font-size: 18px !important;
+    font-weight: bold;
+    line-height: 1.91;
+    color: #302f2e;
+    margin-top: 2em;
+}
+.pod-card-text *  {
+    font-family: CaviarDreams !important;
+}
+.pod-card-text p img {
+    width: 100%;
+}
+.pod-data   {
+    font-family: CaviarDreams;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 2.22;
+    color: #7389e8;
+}
+
+@media only screen and (max-width:400px)  {
+    .col-11 {
+        justify-content: center;
+        padding: 0;
+    }
+    .col-12 {
+        padding: 0;
+        justify-content: center;
+    }
+    .pod-data   {
+        font-size: 14px;
+
+    }
+    .podrobnee-title    {
+        font-size: 24px;
+    }
+    .podrobnee-theme    {
+        font-size: 22px;
+    }
+    .podrobnee-about    {
+        font-size: 18px;
+
+    }
+    .social-pod {
+        display: flex;
+        justify-content: space-between;
+        margin: 1em 0;
+
+    }
+    .pod-card-text  {
+        font-size: 16px;
+    }
+
+}

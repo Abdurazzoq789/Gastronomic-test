@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\bootstrap4\ActiveForm;
 use mihaildev\ckeditor\CKEditor;
+use kartik\datetime\DateTimePicker;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\News */
@@ -15,7 +16,20 @@ use mihaildev\ckeditor\CKEditor;
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'date')->textInput() ?>
+    <?php  
+    echo '<label class="control-label">Birth Date</label>';
+    echo DateTimePicker::widget([
+        'model' => $model,
+        'attribute' => 'date',
+        'name' => 'dp_2',
+        'type' => DateTimePicker::TYPE_COMPONENT_PREPEND,
+        'value' => '01-JAN-2019',
+        'pluginOptions' => [
+            'autoclose'=>true,
+            'format' => 'yyyy-mm-dd'
+        ]
+    ]);
+?>
 
     <?= $form->field($model, 'description')->widget(CKEditor::className(),[
     'editorOptions' => [

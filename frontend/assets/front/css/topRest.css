@@ -1,0 +1,122 @@
+.rest-title {
+    margin-bottom: 1em;
+    font-family: CeraPro;
+    font-size: 36px;
+    font-weight: 900;
+    line-height: 1.11;
+    color: #dea04a;
+}
+.grid   {
+    display: grid;
+    background-color: #dea04a;
+    grid-template-columns: repeat(auto-fit, 120px);
+    grid-template-rows: repeat(2, auto);
+    padding: 2em;
+	clip-path: polygon(0% 7%, 100% 0%, 100% 100%, 0% 100%);
+
+}
+.grid a {
+    margin-right: 0.2em;
+    margin-left: 0.2em;
+    margin-top: 0.5em;
+    padding: 0 0.3em;
+    font-family: CaviarDreams;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 3.18;
+    color: #ffffff;
+    border-bottom: 1px dashed #fff;
+    text-align: center      ;
+}
+.grid a:hover  {
+    background: #ffffff;
+    color:  #dea04a;
+    border-radius: 4px;
+}
+.grid a.rest-activ {
+    background: #ffffff;
+    color:  #dea04a;
+    border-radius: 4px;
+}
+.restoran   {
+    justify-content: flex-end;
+}
+.img-wrap, .img-wrap img   {
+    max-width: 100%;
+    width: 100%;
+}
+.img-wrap   {
+    position: relative;
+}
+.img-title  {
+    position: absolute;
+    bottom: 50px;
+    left: -110px;
+    background: #7389e8;
+    color: #ffffff;
+    padding: 1.5em 2em;
+	clip-path: polygon(0% 10%, 100% 0%, 100% 100%, 0% 90%);
+}
+.img-title:hover    {
+    color: #ffffff;
+}
+
+.img-wrap .name {
+    font-family: CaviarDreams;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+}
+.img-wrap .adres    {
+    font-family: CeraPro;
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+}
+@media only screen and (max-width: 990px)   {
+    .img-title {
+        bottom: 3px;
+        left: -82px;
+        background: #7389e8;
+        padding: 1em;
+    }
+    .img-wrap .name {
+        font-size: 22px;
+    }
+    .img-wrap .adres {
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 600px)   {
+    .grid {
+        grid-template-columns: repeat(auto-fit, 132px);
+        padding: 1em;
+        clip-path: polygon(0% 3%, 100% 0%, 100% 100%, 0% 100%);
+    }
+    .grid a {
+        font-size: 1em;
+        line-height: 2;
+    }
+    .restoran   {
+        justify-content: center;
+        margin: 0;
+    }
+    .img-title {
+        bottom: 3px;
+        left: -10px;
+        padding: 1em;
+    }
+    .rest-wrap  {
+        padding: 0;
+    }
+    .rest-wrap .col-12  {
+        padding: 0;
+    }
+    .img-wrap .name {
+        font-size: 20px;
+    }
+    .img-wrap .adres {
+        font-size: 12px;
+    }
+}

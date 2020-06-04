@@ -1,0 +1,226 @@
+html{
+	scroll-behavior: smooth;
+}
+
+.row    {
+    margin: 0;
+}
+.Onas-container {
+    font-size: 1em;
+}
+.Onas-img   {
+    display: flex;
+    width: 100%;
+}
+.Onas-img img   {
+    width: 100%;
+    object-fit: contain;
+}
+.Onas-container h3  {
+    font-family: CaviarDreams;
+    font-size: 1.75em;
+    font-weight: bold;
+    color: #dea04a;
+    margin-left: 6.25em;
+}
+.Onas-container .mi {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Onas-container .mi h2  {
+    font-family: CeraPro;
+    font-size: 4.375em;
+    font-weight: 900;
+    color: #dea04a;
+}
+.bottom-chevron {
+    animation: animate 1s linear;
+    animation-iteration-count: infinite;
+}
+.Onas-container .mi p   {
+    font-family: CaviarDreams;
+    font-size: 1.75em;
+    color: #7389e8;
+}
+.Onas-text-container    {
+    /*background:url(/images/O-nas-text-bg.svg) no-repeat center center / auto;*/
+    justify-content: center;
+    padding: 7em 0;
+    margin: 5em auto;
+    clip-path: polygon(0 3%, 100% 0%, 100% 100%, 0% 100%);
+    background: #7389e8;
+}
+.Onas-text-container .Onas-text {
+    font-family: CaviarDreams;
+    font-size: 1.5em;
+    font-weight: bold;
+    line-height: 1.33;
+    color: #ffffff;
+}
+.osnova-container   {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1em;
+}
+.osnova-container h3    {
+    font-family: CeraPro;
+    font-size: 2.75em;
+    font-weight: 900;
+    color: #dea04a;
+    /* margin-left: 7.5em; */
+    transform: skew(0deg, -3deg);
+
+}
+.osnova-bg  {
+    background:url(/images/osnova-bg.png) no-repeat center center / auto;
+    padding: 6em 0;
+	clip-path: polygon(0 8%, 100% 0%, 100% 100%, 0% 92%);
+}
+.osnova-panel-text  {
+    font-family: CaviarDreams;
+    font-size: 1.5em;
+    font-weight: bold;
+    line-height: 1.25;
+    
+}
+.osnova-bg .p1  {
+    color: #ffffff;
+    background-image: linear-gradient(327deg, #97b2f0 95%, #5b7ac1 7%);
+    display: flex;
+}
+.osnova-bg .p2  {
+    background-color: #f8f6ef;
+    display: flex;
+}
+.osnova-bg .p3  {
+    background-color: #ffffff;
+    display: flex;
+}
+.osnova-bg .osnova-panel-text   {
+    padding: 1em 1em 4em
+}
+.osnova-bg .p1 .osnova-panel-text   {
+    background:url(/images/p1-bg.png) no-repeat bottom right / cover;
+    height: 100%;
+}
+.osnova-bg .p2 .osnova-panel-text   {
+    background:url(/images/p2-bg.png) no-repeat bottom right / cover;
+    height: 100%;
+}
+.osnova-bg .p3 .osnova-panel-text   {
+    background:url(/images/p3-bg.png) no-repeat bottom right / cover;
+    height: 100%;
+}
+.dlya-partnyor-container {
+    justify-content: center;
+    flex-direction: column;
+}
+.dlya-partnyor-container .dlya-partnyor-title   {
+    text-align: center;
+    font-family: CeraPro;
+    font-size: 2.75em;
+    font-weight: 900;
+    color: #dea04a;
+}
+.dlya-partnyor-container .dlya-partnyor-panel   {
+    font-family: CaviarDreams;
+    font-size: 1.375em;
+    font-weight: bold;
+    line-height: 1.45;
+    text-align: center;
+    color: #302f2e;
+}
+.dlya-partnyor-container .p1    {
+    background: url(/images/fon-p1.svg) no-repeat center center / contain;
+}
+.dlya-partnyor-container .p2    {
+    background: url(/images/fon-p3.svg) no-repeat center center / contain;
+}
+.dlya-partnyor-container .p3    {
+    background: url(/images/fon-p2.svg) no-repeat center center / contain;
+}
+
+
+#spaceBetween   {
+    justify-content: space-between;
+    font-size: 1em;
+}
+
+#spaceBetween .social-icon   {
+    justify-content: space-between;    
+}
+#spaceBetween .social-icon img  {
+    width: min-content;
+    object-fit: contain ;
+}
+
+@media only screen and (max-width:1366px){
+    .Onas-container, .Onas-text-container, .osnova-container, .dlya-partnyor-container {
+        font-size: 0.7114583333333333em;
+    }
+}
+
+@media only screen and (max-width:1100px){
+    .Onas-container, .osnova-container, .Onas-text-container, .dlya-partnyor-container {
+        font-size:calc(1100em / 1920 );
+    }
+}
+
+@media only screen and (max-width:900px){
+    .Onas-container, .osnova-container, .Onas-text-container, .dlya-partnyor-container {
+        font-size:calc(900em / 1920 );
+    }
+}
+ .partnyor-title    {
+    font-family: CeraPro;
+    font-size: 2.1875em;
+    font-weight: 900;
+    text-align: center;
+    color: #7389e8;
+ }
+@media only screen and (max-width:600px){
+     .osnova-container {
+        font-size: 0.4em;
+    }
+    .Onas-container h3 {
+        font-size: 2.75em;
+        margin-left: 1.25em;
+    }
+    .Onas-text-container    {
+        font-size: 0.5em;   
+     }
+        .osnova-panel-text  {
+            font-size: 1.2em;
+        }
+    .dlya-partnyor-container .p3::before, .dlya-partnyor-container .p2::before, .dlya-partnyor-container .p1::before    {
+        top: -20%;
+    }
+    #spaceBetween  {
+        font-size: 0.5em;
+        
+    } 
+    #spaceBetween .social-icon img  {
+        width: 60%;
+        height: min-content;
+    }
+    #spaceBetween #facebook   {
+        width: 1.5em;
+    }
+    .partnyor-title {
+        font-size: 5em;
+        padding: 1.5em 0 0;
+    }
+}
+@keyframes animate  {
+    0%   {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(5px);
+    }
+    100%  {
+        transform: translateY(0px);
+    }
+}

@@ -1,0 +1,12 @@
+.brand-food-name    {
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 1;
+    color: #dea04a;
+}
+
+@media only screen and (max-width: 400px)   {
+    .brand-food-name {
+        font-size: 27px;
+    }
+}

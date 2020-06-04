@@ -1,0 +1,58 @@
+.img-wrap   {
+    width: fit-content;
+    width: -moz-fit-content;
+    position: relative;
+}
+.img-wrap span  {
+    position: absolute;
+    background-color: #dea04a;
+    content: '#1';
+    padding: 0.8em;
+    bottom: 0;
+    left: 0;
+    font-family: CeraPro;
+    font-size: 66px;
+    font-weight: bold;
+    line-height: 0.33;
+    color: #ffffff;
+}  
+.card   {
+    border: none;
+    background-color: #f8f8f8;
+}
+.card-title {
+    font-family: CeraPro;
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 1.3;
+    color: #302f2e;
+    background: transparent;
+    padding: 1em;
+    margin: 0;
+}
+.card-body  {
+    font-family: CaviarDreams;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.31;
+    color: #302f2e;
+    background: transparent;
+}
+.other  .img-wrap   {
+    width: 90%;
+    transform: translate(0px, -17px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.other  .img-wrap span    {
+    padding: 0.7em;
+    font-size: 32px;
+}
+.other img  {
+    max-width: 100%;
+    width: 100%;
+    height: 15em;
+    object-fit: cover;
+}
+
