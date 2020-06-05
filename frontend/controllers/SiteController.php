@@ -81,8 +81,10 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $restaurants = Restaurant::find()->orderBy(['id' => SORT_DESC])->limit(4)->all();
+        $foods = Foods::find()->orderBy(['id' => SORT_DESC])->limit(4)->all();
         return $this->render('index',[
             'restaurants' => $restaurants,
+            'foods' => $foods,
         ]);
     }
 

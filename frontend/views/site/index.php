@@ -23,42 +23,27 @@ $this->title = 'Gastronomic';
                                 <button> Подробнее </button>
                             </div>     
                           </div>
+                          <?php foreach ($foods as $food): ?>
+                            
                           <div class="item ">
                             <div class="panel">
                                 <div class="p-title">
-                                  <h3>Сердце востока Самарканд</h3>
-                                  <p> Lorem Ipsum является текст-заполнитель обычно </p>
+                                  <h3><?=$food->name ?></h3>
+                                  <p> 
+                                    <?=$food->name?>
+                                  </p>
                                 </div>
                                 <div class="p-body">
-                                  печать и издательской индустрии для предварительного просмотра макета и визуальных макетах.
+                                  <?php if (strlen($food->description) > 100): ?>
+                                    <?=mb_substr($food->description, 0, 100, "utf-8")."..." ?>
+                                  <?php else: ?>
+                                    <?=$food->description?> 
+                                  <?php endif ?>
                                 </div>
                                 <button> Подробнее </button>
                             </div>     
                           </div>
-                          <div class="item">
-                            <div class="panel">
-                                <div class="p-title">
-                                  <h3>Сердце востока Самарканд</h3>
-                                  <p> Lorem Ipsum является текст-заполнитель обычно </p>
-                                </div>
-                                <div class="p-body">
-                                  печать и издательской индустрии для предварительного просмотра макета и визуальных макетах.
-                                </div>
-                                <button> Подробнее </button>
-                            </div>   
-                          </div>
-                          <div class="item">
-                            <div class="panel">
-                                <div class="p-title">
-                                  <h3>Сердце востока Самарканд</h3>
-                                  <p> Lorem Ipsum является текст-заполнитель обычно </p>
-                                </div>
-                                <div class="p-body">
-                                  печать и издательской индустрии для предварительного просмотра макета и визуальных макетах.
-                                </div>
-                                <button> Подробнее </button>
-                            </div>   
-                          </div>
+                          <?php endforeach ?>
                         </div>
                     </div>
                 </div>
