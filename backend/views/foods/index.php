@@ -33,6 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'name',
             'type',
+            ['header' => 'FoodsCountry','value' => 'foodCountry'],
             // 'restaurant.name',
 
             [

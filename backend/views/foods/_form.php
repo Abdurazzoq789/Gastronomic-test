@@ -27,6 +27,10 @@ use mihaildev\ckeditor\CKEditor;
     <?= $form->field($model, 'type')->dropDownList(
             ['Ovqat' => 'Ovqat', 'Salat' => 'Salat', 'Desert' => 'Desert', 'Ichimlik' => 'Ichimlik']
     );?>
+
+    <?= $form->field($model, 'foodCountry')->dropDownList(
+            ['Italian' => 'Italian', 'Uzbek' => 'Uzbek', 'Turk' => 'Turk', 'Fransuz' => 'Fransuz']
+    );?>
     
     <?= $form->field($model, 'ingredient')->widget(CKEditor::className(),[
     'editorOptions' => [

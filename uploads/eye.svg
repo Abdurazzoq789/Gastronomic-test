@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="17.23" height="9.086" viewBox="0 0 17.23 9.086">
+    <defs>
+        <style>
+            .prefix__cls-1{fill:#7389e8}
+        </style>
+    </defs>
+    <g id="prefix__eye" transform="translate(0 -121)">
+        <g id="prefix__Group_211" data-name="Group 211" transform="translate(-.001 121)">
+            <g id="prefix__Group_210" data-name="Group 210">
+                <path id="prefix__Path_108" d="M17.1 125.206c-.154-.172-3.853-4.206-8.486-4.206s-8.332 4.035-8.486 4.206a.5.5 0 000 .673c.154.172 3.853 4.206 8.486 4.206s8.332-4.035 8.486-4.206a.5.5 0 000-.673zm-8.486 3.87a3.533 3.533 0 113.533-3.533 3.538 3.538 0 01-3.533 3.533z" class="prefix__cls-1" data-name="Path 108" transform="translate(.001 -121)"/>
+            </g>
+        </g>
+        <g id="prefix__Group_213" data-name="Group 213" transform="translate(6.09 123.019)">
+            <g id="prefix__Group_212" data-name="Group 212">
+                <path id="prefix__Path_109" d="M184.029 182.514a1.509 1.509 0 01.636-1.229 2.491 2.491 0 00-1.14-.285 2.524 2.524 0 102.475 2.949 1.506 1.506 0 01-1.971-1.435z" class="prefix__cls-1" data-name="Path 109" transform="translate(-181 -181)"/>
+            </g>
+        </g>
+    </g>
+</svg>

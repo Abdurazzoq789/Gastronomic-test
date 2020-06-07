@@ -29,16 +29,9 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'foods.restaurant.name',
+            'id',
+            'photo',
             'foods.name',
-            [
-                'attribute' => 'photo',
-                'format' => 'html',    
-                'value' => function ($data) {
-                    return Html::img(Yii::getAlias('@web').'/'. $data['photo'],
-                        ['width' => '70px']);
-                },
-            ],
         ],
     ]) ?>
 

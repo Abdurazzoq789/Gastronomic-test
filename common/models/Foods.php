@@ -37,7 +37,7 @@ class Foods extends \yii\db\ActiveRecord
             [['restaurant_id'], 'required'],
             [['restaurant_id'], 'integer'],
             [['name'], 'string', 'max' => 100],
-            [['type'], 'string', 'max' => 45],
+            [['type','foodCountry'], 'string', 'max' => 45],
             [['ingredient'], 'string', 'max' => 255],
             [['restaurant_id'], 'exist', 'skipOnError' => true, 'targetClass' => Restaurant::className(), 'targetAttribute' => ['restaurant_id' => 'id']],
         ];
@@ -55,6 +55,7 @@ class Foods extends \yii\db\ActiveRecord
             'type' => 'Type',
             'ingredient' => 'Ingredient',
             'restaurant_id' => 'Restaurant ID',
+            'foodCountry' => 'FoodsCountry',
         ];
     }
 
@@ -76,6 +77,14 @@ class Foods extends \yii\db\ActiveRecord
     public function getFoodsPhotos()
     {
         return $this->hasMany(FoodsPhoto::className(), ['foods_id' => 'id']);
+    }
+
+    public function getFoodsPoster() {
+        return $this->hasOne(FoodsPhoto::class, ['foods_id' => 'id']);
+    }
+
+    public function getPoster() {
+        return $this->getFoodsPoster()->count() ? $this->foodsPoster : new foodsPhoto();
     }
 
     /**

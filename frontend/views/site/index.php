@@ -11,34 +11,22 @@ $this->title = 'Gastronomic';
                 <div class="col-12 col-md-6 col-lg-6 ">
                     <div id="mySlider" class="">
                         <div class="owl-carousel owl-theme" id="myOwl">
-                          <div class="item ">
-                            <div class="panel">
-                                <div class="p-title">
-                                  <h3>Сердце востока Самарканд</h3>
-                                  <p> Lorem Ipsum является текст-заполнитель обычно </p>
-                                </div>
-                                <div class="p-body">
-                                  печать и издательской индустрии для предварительного просмотра макета и визуальных макетах.
-                                </div>
-                                <button> Подробнее </button>
-                            </div>     
-                          </div>
-                          <?php foreach ($foods as $food): ?>
+                          <?php foreach ($restaurants as $restaurant): ?>
                             
-                          <div class="item ">
+                          <div class="item " style="background: url(<?=$restaurant->poster->photo?>) no-repeat center center / cover;;">
                             <div class="panel">
                                 <div class="p-title">
-                                  <h3><?=$food->name ?></h3>
+                                  <h3><?=$restaurant->name ?></h3>
                                   <p> 
-                                    <?=$food->name?>
+                                    <?=$restaurant->description?>
                                   </p>
                                 </div>
                                 <div class="p-body">
-                                  <?php if (strlen($food->description) > 100): ?>
-                                    <?=mb_substr($food->description, 0, 100, "utf-8")."..." ?>
+                                  <?php if (strlen($restaurant->description) > 100): ?>
+                                    <?=mb_substr(strip_tags($restaurant->description), 0, 100, "utf-8")."..."?>
                                   <?php else: ?>
-                                    <?=$food->description?> 
-                                  <?php endif ?>
+                                    <?=strip_tags($restaurant->description) ?>
+                                  <?php endif; ?>
                                 </div>
                                 <button> Подробнее </button>
                             </div>     
@@ -49,26 +37,19 @@ $this->title = 'Gastronomic';
                 </div>
                 <div class="col-12 col-md-6 col-lg-6 plov">
                   <div class="owl-carousel owl-theme slider" id="myOwl2">
-                    <div class="panel item">
-                      <h3> Сердце востока Самарканд </h3>
-                      <p> Lorem Ipsum является текст-заполнитель обычно </p>
-                      <button> Подробнее </button>
-                    <img class="plov-img" src="./images/plov.png" alt="palov">
-
-                  </div>
-                  <?php foreach ($restaurants as $restaurant): ?>
+                  <?php foreach ($foods as $food): ?>
                     
                   <div class="panel item">
-                    <h3> <?=$restaurant->name ?> </h3>
+                    <h3> <?=$food->name ?> </h3>
                     <p> 
-                      <?php if (strlen($restaurant->description) > 100): ?>
-                        <?=mb_substr($restaurant->description, 0, 100, "utf-8")."..."?>
+                      <?php if (strlen($food->description) > 100): ?>
+                        <?=mb_substr(strip_tags($food->description), 0, 100, "utf-8")."..."?>
                       <?php else: ?>
-                        <?=$restaurant->description ?>
-                      <?php endif ?>
-                     </p>
+                        <?=strip_tags($food->description) ?>
+                      <?php endif; ?>
+                    </p>
                     <button> Подробнее </button>
-                    <img class="plov-img" src="./images/plov.png" alt="palov">
+                    <img class="plov-img" width="50px" src="<?=$food->poster->photo?>" alt="palov">
                   </div>
 
                   <?php endforeach ?>

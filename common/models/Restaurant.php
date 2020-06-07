@@ -92,6 +92,14 @@ class Restaurant extends \yii\db\ActiveRecord
         return $this->hasMany(RestaurantPhoto::className(), ['restaurant_id' => 'id']);
     }
 
+
+    public function getRestaurantPoster() {
+        return $this->hasOne(RestaurantPhoto::class, ['restaurant_id' => 'id']);
+    }
+
+    public function getPoster() {
+        return $this->getRestaurantPoster()->count() ? $this->restaurantPoster : new RestaurantPhoto();
+    }
     /**
      * {@inheritdoc}
      * @return RestaurantQuery the active query used by this AR class.
