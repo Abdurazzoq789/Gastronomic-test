@@ -8,7 +8,7 @@ $(document).ready(function(){
 
           var vsId = $(this).data('vs-id');
           var like = $(this).data('like');
-
+          alert('asdasd');
           $.post('/site/vote', {
                   id: vsId,
                   like: like

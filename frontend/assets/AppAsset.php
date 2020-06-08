@@ -9,7 +9,7 @@ use yii\web\AssetBundle;
  */
 class AppAsset extends AssetBundle
 {
-    public $sourcePath = '@frontend/assets/front';
+    // public $sourcePath = '@frontend/assets/front';
 
     public $css = [
         'css/bootstrap.min.css',

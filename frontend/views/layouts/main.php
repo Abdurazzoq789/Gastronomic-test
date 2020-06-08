@@ -78,9 +78,7 @@ AppAsset::register($this);
     </nav>
 <div class="wrap">
 
-    <div class="container">
         <?= $content ?>
-    </div>
 </div>
 
 <footer class="footer">

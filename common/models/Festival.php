@@ -59,6 +59,14 @@ class Festival extends \yii\db\ActiveRecord
         return $this->hasMany(FestivalPhoto::className(), ['festival_id' => 'id']);
     }
 
+    public function getFestivalPoster() {
+        return $this->hasOne(FestivalPhoto::class, ['festival_id' => 'id']);
+    }
+
+    public function getPoster() {
+        return $this->getFestivalPoster()->count() ? $this->festivalPoster : new festivalPhoto();
+    }
+
     /**
      * {@inheritdoc}
      * @return \common\models\query\FestivalQuery the active query used by this AR class.
@@ -66,5 +74,11 @@ class Festival extends \yii\db\ActiveRecord
     public static function find()
     {
         return new \common\models\query\FestivalQuery(get_called_class());
+    }
+
+    public function getLink() {
+        return \Yii::$app->urlManager->createUrl([
+            'festival/show'
+        ]);
     }
 }

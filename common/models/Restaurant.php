@@ -108,4 +108,10 @@ class Restaurant extends \yii\db\ActiveRecord
     {
         return new \common\models\query\RestaurantQuery(get_called_class());
     }
+
+    public function getLink() {
+        return \Yii::$app->urlManager->createUrl([
+            'restaurant/show'
+        ]);
+    }
 }

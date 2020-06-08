@@ -59,6 +59,14 @@ class News extends \yii\db\ActiveRecord
         return $this->hasMany(NewsPhoto::className(), ['news_id' => 'id']);
     }
 
+    public function getNewsPoster() {
+        return $this->hasOne(NewsPhoto::class, ['news_id' => 'id']);
+    }
+
+    public function getPoster() {
+        return $this->getNewsPoster()->count() ? $this->newsPoster : new newsPhoto();
+    }
+
     /**
      * {@inheritdoc}
      * @return \common\models\query\NewsQuery the active query used by this AR class.
@@ -66,5 +74,11 @@ class News extends \yii\db\ActiveRecord
     public static function find()
     {
         return new \common\models\query\NewsQuery(get_called_class());
+    }
+
+    public function getLink() {
+        return \Yii::$app->urlManager->createUrl([
+            'news/show'
+        ]);
     }
 }

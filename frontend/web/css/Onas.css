@@ -44,10 +44,12 @@ html{
     color: #7389e8;
 }
 .Onas-text-container    {
-    background:url(../images/O-nas-text-bg.svg) no-repeat center center / auto;
+    /*background:url(/images/O-nas-text-bg.svg) no-repeat center center / auto;*/
     justify-content: center;
     padding: 7em 0;
     margin: 5em auto;
+    clip-path: polygon(0 3%, 100% 0%, 100% 100%, 0% 100%);
+    background: #7389e8;
 }
 .Onas-text-container .Onas-text {
     font-family: CaviarDreams;
@@ -72,7 +74,7 @@ html{
 
 }
 .osnova-bg  {
-    background:url(../images/osnova-bg.png) no-repeat center center / auto;
+    background:url(/images/osnova-bg.png) no-repeat center center / auto;
     padding: 6em 0;
 	clip-path: polygon(0 8%, 100% 0%, 100% 100%, 0% 92%);
 }
@@ -100,15 +102,15 @@ html{
     padding: 1em 1em 4em
 }
 .osnova-bg .p1 .osnova-panel-text   {
-    background:url(../images/p1-bg.png) no-repeat bottom right / cover;
+    background:url(/images/p1-bg.png) no-repeat bottom right / cover;
     height: 100%;
 }
 .osnova-bg .p2 .osnova-panel-text   {
-    background:url(../images/p2-bg.png) no-repeat bottom right / cover;
+    background:url(/images/p2-bg.png) no-repeat bottom right / cover;
     height: 100%;
 }
 .osnova-bg .p3 .osnova-panel-text   {
-    background:url(../images/p3-bg.png) no-repeat bottom right / cover;
+    background:url(/images/p3-bg.png) no-repeat bottom right / cover;
     height: 100%;
 }
 .dlya-partnyor-container {
@@ -131,13 +133,13 @@ html{
     color: #302f2e;
 }
 .dlya-partnyor-container .p1    {
-    background: url(../images/fon-p1.svg) no-repeat center center / contain;
+    background: url(/images/fon-p1.svg) no-repeat center center / contain;
 }
 .dlya-partnyor-container .p2    {
-    background: url(../images/fon-p3.svg) no-repeat center center / contain;
+    background: url(/images/fon-p3.svg) no-repeat center center / contain;
 }
 .dlya-partnyor-container .p3    {
-    background: url(../images/fon-p2.svg) no-repeat center center / contain;
+    background: url(/images/fon-p2.svg) no-repeat center center / contain;
 }
 
 

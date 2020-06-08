@@ -27,13 +27,19 @@
     max-width: 100%;
     width: 100%;
 }
-.pod-card-text  {
-    font-family: CaviarDreams;
-    font-size: 22px;
+.pod-card-text {
+    font-family: CaviarDreams !important;
+    font-size: 18px !important;
     font-weight: bold;
     line-height: 1.91;
     color: #302f2e;
     margin-top: 2em;
+}
+.pod-card-text *  {
+    font-family: CaviarDreams !important;
+}
+.pod-card-text p img {
+    width: 100%;
 }
 .pod-data   {
     font-family: CaviarDreams;

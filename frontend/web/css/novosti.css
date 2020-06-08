@@ -36,14 +36,14 @@
     display: inline-block;
 
 }
- .novosti-container {
-     margin: 0;
-     padding: 0;
- }
+.row .novosti-container {
+    margin: 0;
+    padding: 0;
+}
 .other-cards .card   {
     display: flex;
     flex-direction: column;
-    width: min-content;
+    /*width: min-content;*/
 }
 .other-cards .card .card-img    {
     display: flex;
@@ -60,28 +60,28 @@
 }
   
 @media only screen and (max-width: 900px)   {
-.main-card .card-title  {
-    font-size: 1.3em;
-}
-.main-card a   {
-    font-size: 1em;
-    padding: 0.8em 2em;
-    margin-top: 0.3em;
-}
-.main-card .card-body   {
-    line-height: 1.3;
-    font-size: 1em;
-}
-#lastCol    {
-    display: flex;
-    justify-content: space-between;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-}
-#lastCol .card  {
-    display: flex;
-}
+    .main-card .card-title  {
+        font-size: 3.3em;
+    }
+    .main-card a   {
+        font-size: 2em;
+        padding: 0.8em 2em;
+        margin-top: 0.3em;
+    }
+    .main-card .card-body   {
+        line-height: 1.3;
+        font-size: 1em;
+    }
+    #lastCol    {
+        display: flex;
+        justify-content: space-between;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+    #lastCol .card  {
+        display: flex;
+    }
 
 }

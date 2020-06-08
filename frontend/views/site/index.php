@@ -3,9 +3,8 @@
 /* @var $this yii\web\View */
 $this->title = 'Gastronomic';
 ?>
-<div class="container-fluid">
 
-        <div class="vastok-container">
+        <div class="container vastok-container">
             <h1>Почуствуй вкус Востока!</h1>
             <div class="row">
                 <div class="col-12 col-md-6 col-lg-6 ">
@@ -28,7 +27,7 @@ $this->title = 'Gastronomic';
                                     <?=strip_tags($restaurant->description) ?>
                                   <?php endif; ?>
                                 </div>
-                                <button> Подробнее </button>
+                                <a href="<?=$restaurant->getLink()?>"> To'liqroq </a>
                             </div>     
                           </div>
                           <?php endforeach ?>
@@ -48,7 +47,7 @@ $this->title = 'Gastronomic';
                         <?=strip_tags($food->description) ?>
                       <?php endif; ?>
                     </p>
-                    <button> Подробнее </button>
+                    <a class="button" href="<?=$food->getLink()?>"> To'liqroq </a>
                     <img class="plov-img" width="50px" src="<?=$food->poster->photo?>" alt="palov">
                   </div>
 
@@ -57,14 +56,15 @@ $this->title = 'Gastronomic';
                 </div>
             </div>
         </div>
+        </div>
         
     <div class="vs-container">
       <div class="wrap-vs">
         <div class="uzbek">
           <img class="like-img" src="./images/uzbekistan.png" alt="uzbekistan">
-          <button class="like"> Столичная 
+          <button class="like"> <?=$versusUz->name;?> 
             <img class="yurak" src="./images/heart (1).png" alt="yuraks">  
-            <img class='clicked-like' src="./images/Clickedlike.svg" alt="Clickedlike">
+            <span class='clicked-like'></span>
           </button>
           <img class="salat" src="./images/uzbek-salat.png" alt="uzbek-salat">
         </div>
@@ -74,9 +74,10 @@ $this->title = 'Gastronomic';
         </div>
         <div class="france">
           <img class="like-img" src="./images/france.png" alt="france">
-          <button class="like">Спинач 
+          <button class="like"><?=$versusTurk->name?>
             <img class="yurak" src="./images/heart (1).png" alt="yurak">
-            <img class='clicked-like' src="./images/Clickedlike.svg" alt="Clickedlike">
+            <span class='clicked-like'></span>
+
           </button>
           <img  class="salat" src="./images/france-salat.png" alt="france-salat">
         </div>
@@ -85,233 +86,170 @@ $this->title = 'Gastronomic';
     </div>
 
     <div class="forma-container">
-      <div class="div" id="form-cont">
-        <form class="forma">
-        <input type="text" placeholder="Фамилия Имя Отчестов">
-        <input type="text" placeholder="Страна">
-        <input type="text" placeholder="Телефон номер">
-      </form>
-      </div>
-      <div class="forma-panel">
-        <h3>Ассоциация гастрономического туризма Узбекистана</h3>
-        <p>Мы хотим чтобы туристы наслаждались вкусной едой и качественном сервисом!</p>
-        <button> Отправить заявку </button>
-      </div>
-      <div class="meva-cheva" class="img-fluid">
-        <img src="./images/fruits.png" alt="fruit">
-      </div>
+    <div class="div" id="form-cont">
+        <?php $form = \yii\bootstrap4\ActiveForm::begin([
+            'options' => [
+                'class' => 'forma'
+            ]
+        ]); ?>
+            <?=$form->field($contact, 'name')->textInput(['placeholder' => 'Фамилия Имя Отчество'])->label(false)?>
+            <?=$form->field($contact, 'massage')->textInput(['placeholder' => 'Страна'])->label(false)?>
+            <?=$form->field($contact, 'phone')->textInput(['placeholder' => 'Телефон номер'])->label(false)?>
+        <?php \yii\bootstrap4\ActiveForm::end()?>
     </div>
+    <div class="forma-panel">
+        <h3><?="Ассоциация гастрономического туризма Узбекистана"?></h3>
+        <p><?="Мы хотим чтобы туристы наслаждались вкусной едой и качественном сервисом!"?></p>
+        <button class="form-submit"><?="Отправить заявку"?></button>
+    </div>
+    <div class="meva-cheva img-fluid">
+        <img src="./images/anor.png" alt="anor.png">
+    </div>
+  </div>
 
+  <div class="container news">
     <div class="novosti-container">
-      <h3>Новости</h3>
-      <div class="row">
-        <div class="col-sm-12 col-md-6 col-lg-4">
-          <a href="#" class="card">
-            <div class="card-img">
-              <img src="./images/card-img-1.png" alt="news">
-            </div>
-            <div class="card-title">
-              Рецепт вкуснейшего плова от знатоков восточной кухни
-            </div>
-            <div class="card-btn">
-              <button>Подробнее</button>
-            </div>
-          </a>
-          <a href="#" class="card">
-            <div class="card-img">
-              <img src="./images/card-img-2.png" alt="news">
-            </div>
-            <div class="card-title">
-              Sumalak party in “Navruz”
-            </div>
-            <div class="card-btn">
-              <button>Подробнее</button>
-            </div>
-          </a>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4">
-          <a href="#" class="card">
-            <div class="card-img">
-              <img src="./images/card-img-3.png" alt="news">
-            </div>
-            <div class="card-title">
-              Гули Ханум Шейх визит в Ассоциацию Гастрономического туризма в Узбекистане
-            </div>
-            <div class="card-btn">
-              <button>Подробнее</button>
-            </div>
-          </a>
-          <a href="#" class="card">
-            <div class="card-img">
-              <img src="./images/card-img-2.png" alt="news">
-            </div>
-            <div class="card-title">
-              Sumalak party in “Navruz”
-            </div>
-            <div class="card-btn">
-              <button>Подробнее</button>
-            </div>
-          </a>
-        </div>
-        <div class="col-sm-12 col-md-12 col-lg-4">
-          <a href="#" class="card">
-            <div class="card-img">
-              <img src="./images/card-img-2.png" alt="news">
-            </div>
-            <div class="card-title">
-              Sumalak party in “Navruz”
-            </div>
-            <div class="card-btn">
-              <button>Подробнее</button>
-            </div>
-          </a>
-          <a href="#" class="card">
-            <div class="card-img">
-              <img src="./images/card-img-1.png" alt="news">
-            </div>
-            <div class="card-title">
-              Рецепт вкуснейшего плова от знатоков восточной кухни
-            </div>
-            <div class="card-btn">
-              <button>Подробнее</button>
-            </div>
-          </a>
-        </div>
-        <div class="pokazat">
-          <a href="#">Показать еще</a>
-        </div>
-      </div>
-      <div class="pred-sled">
-        <button class="prev"> <img src="./images/arrow left.svg" alt="left"> </button>
-        <button class="next"> <img src="./images/arrow right.svg" alt="right"> </button>
-      </div>
-    </div>
+        <h3><?= "Новости" ?></h3>
+        <div class="row justify-start">
 
-    <div class="festival-container">
-      <h1>Ближающий Фестивали</h1>
-      <div class="festival">
-        <div class="slider owl-carousel owl-theme " id='festival'>
-          <div class="item">
-            <div class="img-left">
-              <img src="./images/lola.png" alt="lola">
+            <?php foreach($news as $new): ?>
+                <div class="col-sm-12 col-md-6 col-lg-4 p-2">
+                    <a href="<?=$new->getLink()?>" class="card">
+                        <div class="card-img">
+                            <img src="<?=$new->poster->photo?>" alt="<?=$new->poster->photo?>">
+                        </div>
+                        <div class="card-title">
+                            <?=$new->title?>
+                        </div>
+                        <div class="card-btn">
+                            <div class="button"><?= "Подробнее" ?></div>
+                        </div>
+                    </a>
+                </div>
+            <?php endforeach; ?>
+
+        </div>
+        <div class="pokazat row col-12 justify-content-center">
+            <a href="<?=\Yii::$app->urlManager->createUrl(['news/index'])?>"><?="Показать еще"?></a>
+        </div>
+        <div class="pred-sled">
+            <button class="prev"> <img src="./images/arrow left.svg" alt="left"> </button>
+            <button class="next"> <img src="./images/arrow right.svg" alt="right"> </button>
+        </div>
+    </div>
+</div>
+
+<div class="festival-container">
+    <h1><?= "Ближающий Фестивали" ?></h1>
+    <div class="festival">
+      <div class="slider owl-carousel owl-theme " id='festival'>
+        <?php foreach($festivals as $festival): ?>
+            <div class="item">
+                <div class="img-left">
+                    <img src="<?=$festival->poster->photo?>" alt="<?=$festival->poster->photo?>">
+                </div>
+                <div class="festival-panel">
+                    <h3> <?=$festival->title?> </h3>
+                    <button> <?= "Читать подробнее" ?> </button>
+                </div>
             </div>
-            <div class="festival-panel">
-             <h3> Фестиваль “Маковое поле и кебаб”! </h3>
-             <button> Читать подробнее </button>
-            </div>
-          </div>
-          <div class="item">
-            <div class="img-left">
-              <img src="./images/lola.png" alt="lola">
-            </div>
-            <div class="festival-panel">
-             <h3> Фестиваль “Маковое поле и кебаб”! </h3>
-             <button> Читать подробнее </button>
-            </div>
-          </div>
-          <div class="item">
-            <div class="img-left">
-              <img src="./images/lola.png" alt="lola">
-            </div>
-            <div class="festival-panel">
-             <h3> Фестиваль “Маковое поле и кебаб”! </h3>
-             <button> Читать подробнее </button>
-            </div>
-          </div>
-          
+            <?php endforeach; ?>
         </div>
         <div class="img-right">
-          <img src="./images/shar.png"  alt="shar">
+           <img src="./images/shar.png" alt="">
         </div>
-      </div>
     </div>
+</div>
 
+<div class="container">
     <div class="statistika-container">
-      <div class="statistika row">
-        <h1 class="col-12"> Статистика </h1>
-        <div class="restoran col-6">
-          <p>Рестораны</p>
-          <span>754</span>
+        <div class="statistika row">
+            <h1 class="col-12"> <?="Статистика"?> </h1>
+            <div class="restoran col-6">
+                <p><?="Рестораны"?></p>
+                <span><?=$restaurantsCount?></span>
+            </div>
+            <div class="members col-6">
+                <p><?="Члены"?></p>
+                <span><?=$membersCount?></span>
+            </div>
+            <div class="festi col-6">
+                <p><?="Фестивали"?></p>
+                <span><?=$festivalsCount?></span>
+            </div>
+            <div class="partnyor col-6">
+                <p><?="Патрнеры"?></p>
+                <span><?=45?></span>
+            </div>
         </div>
-        <div class="members col-6">
-          <p>Члены</p>
-          <span>675</span>
+        <div class="statistika-panel-fon">
+            <div class="statistika-panel">
+                <div class="panel-title">
+                    <?="Преимущества работы с нами"?>
+                </div>
+                <div class="panel-body">
+                    <?="Become one of the most visited restaurants in Uzbekistan"?>
+                </div>
+                <div class="panel-button">
+                    <a class="button" href="/menu/features"> <?="Подробнее"?> </a>
+                </div>
+            </div>
         </div>
-        <div class="festi col-6">
-          <p>Фестивали</p>
-          <span>3</span>
-        </div>
-        <div class="partnyor col-6">
-          <p>Патрнеры</p>
-          <span>8</span>
-        </div> 
-      </div>
-      <div class="statistika-panel-fon">
-        <div class="statistika-panel">
-          <div class="panel-title">
-            Преимущества работы с нами
-          </div>
-          <div class="panel-body">
-            Lorem Ipsum является текст-заполнитель обычно
-          </div>
-          <div class="panel-button">
-            <button> Подробнее </button>
-          </div>
-        </div>
-      </div>
     </div>
+</div>
 
-    <div class="galereya-container">
-      <h1>Фото галерея</h1>
-      <div class="galereya">
+<div class="galereya-container">
+    <h1><?="Фото галерея"?></h1>
+    <div class="galereya">
         <div class="galereya-panel">
-          <div class="panel-title">
-            Следите за нами в социальных сетях тоже!
-          </div>
-          <div class="panel-body">
-            Подпишитесь на наши новости Узнавайте первыми!
-          </div>
-          <div class="panel-form">
-            <input type="text" placeholder="Введите адрес электронной почты">
-            <button> <img src="./images/send.png" alt="send"> </button>
-          </div>
+            <div class="panel-title">
+                <?="Следите за нами в социальных сетях тоже!"?>
+            </div>
+            <div class="panel-body">
+                <?="Подпишитесь на наши новости Узнавайте первыми!"?>
+            </div>
+            <div class="panel-form">
+                <input type="text" placeholder="<?="Введите адрес электронной почты"?>">
+                <button> <img src="/images/send.png" alt="send"> </button>
+            </div>
         </div>
-      </div>
-      <div class="galereya-img">
+    </div>
+    <div class="galereya-img">
         <div class="img-1">
-          <img src="./images/galereya-1.png" alt="meal">
-          <img src="./images/galereya-3.png" alt="meal">
+            <img src="./images/galereya-1.png" alt="./images/galereya-1.png">
+            <img src="./images/galereya-3.png" alt="./images/galereya-3.png">
         </div>
         <div class="img-2">
-          <img src="./images/galereya-2.png" alt="meal">
-        <img src="./images/galereya-4.png" alt="meal">
+          <img src="./images/galereya-2.png" alt="./images/galereya-2.png">
+          <img src="./images/galereya-4.png" alt="./images/galereya-4.png">
         </div>
-      </div>
-      <div class="social">
-        <a href=""><img src="./images/facebook (2).png" alt="facebook"></a>
-        <a href=""><img src="./images/instagram (2).png" alt="instagram"></a>
-        <a href=""><img src="./images/twitter.png" alt="twitter"></a>
-      </div>
     </div>
+    <div class="social">
+        <a href="#"><img src="/images/facebook (2).png" alt="facebook"></a>
+        <a href="#"><img src="/images/instagram (2).png" alt="instagram"></a>
+        <a href="#"><img src="/images/twitter.png" alt="twitter"></a>
+    </div>
+</div>
 
+<div class="container">
     <div class="contact-container row justify-content-around">
-      <a href="#" class="telegram col-md-6 col-sm-12">
-      
-          <div class="tg-link"><img src="./images/telegram (2).png" alt="telegram">Telegram</></div>
-          <p>t.me@gostuz</p>
-        
-       
-      </a>
-      <div class="tel col-md-6 col-sm-12 ">
-        <div class="tel-text row">
-           <div class="col-10 m-0 p-0">Спешите, позвоните нам и откройте двери возможностей!</div> 
-           <div class="col-2 p-0"><img class="img-fluid" src="./images/call.svg" alt="call"></div>
+        <a href="https://t.me/gastrotourism_uz" class="telegram col-md-6 col-sm-12">
+            <div class="tg-link"><img src="/images/telegram (2).png" alt="telegram" />Telegram</div>
+            <p>t.me@gastrotourism_uz</p>
+        </a>
+        <div class="tel col-md-6 col-sm-12 ">
+            <div class="tel-text row">
+                <div class="col-10 m-0 p-0"><?="Спешите, позвоните нам и откройте двери возможностей!"?></div>
+                <div class="col-2 p-0"><img class="img-fluid" src="/images/call.svg" alt="call"></div>
+            </div>
+            <div class="tel-number">
+                <a href="#"></a>
+            </div>
         </div>
-        <div class="tel-number"><a href="tel:"> 123-45-67</a></div>
-      </div>
     </div>
+</div>
 
-    <div class="partnyor-container">
+    <div class="container-fluid partnyor-container">
       <h1>Наше любимие партнеры</h1>
       <div class="naw-partnyor">
         <div class="logos owl-carousel owl-theme" id="logos">
@@ -395,4 +333,3 @@ $this->title = 'Gastronomic';
         </div>
       </div>
     </div>
-  </div>

@@ -1,10 +1,10 @@
-.rest-header    {
-    background: url(../images/rest-haeder-bg.png) no-repeat center center / cover;
+.row .rest-header    {
+    background: url(/images/rest-haeder-bg.png) no-repeat center center / cover;
     padding: 60px 35px;
 }
-.about-rest {
+.row .about-rest {
     background-color: #fff;
-    background: url(../images/about-rest-bg.png) no-repeat bottom right / contain , #fff;
+    background: url(/images/about-rest-bg.png) no-repeat bottom right / contain , #fff;
     background-size: 165px;
     padding: 35px 45px;
 }
@@ -30,7 +30,8 @@
   
 }
 .rest-grid   {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
     background-color: #7389e8;
     grid-template-columns: repeat(auto-fit, 150px);
     grid-template-rows: repeat(1, auto);
@@ -41,14 +42,16 @@
 }
 .rest-grid a {
     font-family: CaviarDreams;
-    font-size: 22px;
+    font-size: 1.2em;
     font-weight: bold;
     line-height: 3.18;
     color: #ffffff;
     border-bottom: 1px dashed #fff;
     text-align: center      ;
+    margin: 0 10px;
+    padding: 0 10px;
 }
-.rest-grid a:hover  {
+.rest-grid a:hover, .rest-grid a.active  {
     background: #ffffff;
     color:  #7389e8;
     border-radius: 4px;
@@ -64,7 +67,7 @@
 }
 .brend-img-title  a  {
     font-family: CaviarDreams;
-    font-size: 24px;
+    font-size: 1.3em;
     font-weight: bold;
     line-height: 1.54;
     color: #000000;
@@ -73,7 +76,7 @@
     color: #000000;
 }
 .modal-content span img {
-    width: 3em;
+    width: 0.8em;
 }
 .brend-food-img {
     position: relative;
@@ -120,7 +123,7 @@
     font-weight: bold;
     line-height: 1.69;
     color: #000000;
-    text-align: center;
+    text-align: left;
 }
 .rest-like  {
     margin-top: 5em;
@@ -158,7 +161,7 @@
     color: #000000;
 }
 .ofitsant-card  {
-    border: none;
+    border: none !important;
     border-radius: 0;
     text-align: center;
 }
@@ -263,9 +266,6 @@
     .about-rest {
         margin: 0 auto;
     }
-    /* .modal-content span img {
-        width: 0.9em;
-    } */
     .rest-name  {
         font-size: 25px;
     }

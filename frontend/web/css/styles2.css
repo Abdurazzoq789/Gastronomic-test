@@ -89,7 +89,7 @@ ul.navbar-nav	{
 	padding-left: 9.375em;
 }
 ul.navbar-nav li {
-	margin: 0 1.1em;
+	margin: 0 0.7em;
 	font-family: CaviarDreams;
 	font-size: 1.625em;
 	font-weight: bold;
@@ -245,8 +245,10 @@ ul.nav-right .search	{
 	padding-top: 6.375em;
 	padding-left: 3.44em;
 	padding-bottom: 3.7em;
-	background:	url(../images/slide-fon.png) no-repeat center center / cover;
+	background:	url(/images/slide-fon.png) no-repeat center center / cover;
+	height: 45em;
 }
+
 .owl-theme	{ position: relative; }
 .owl-theme .owl-dots	{
 	position: absolute;
@@ -433,6 +435,9 @@ button.like	{
 }
 .uzbek .salat	{
 	width: 25em;
+    height: 25em;
+    object-fit: cover;
+    margin-top: 3.37em;
 }
 .france button.like	{
 	background-color: #dba965;
@@ -444,8 +449,10 @@ button.like	{
 	color: red;
 }
 .france .salat	{
-	width: 25em;
-	margin-top: 3.37em;
+    width: 25em;
+    height: 25em;
+    object-fit: cover;
+    margin-top: 3.37em;
 }
 .vs	{
 	padding: 2.5em 2em;
@@ -467,7 +474,7 @@ button.like	{
 	font-size: 1em;
 	margin: 6.25em 5.3em;
 	min-height: 25.4em;
-	background: url(../images/bg-forma.png) no-repeat center center / cover;
+	background: url(/images/bg-forma.png) no-repeat center center / cover;
 	display: flex;
 	position: relative;
 }
@@ -564,11 +571,11 @@ button.like	{
 	margin-right: auto;
 }
 .novosti-container .card	{
-	background: url(../images/card-fon.png);
+	background: url(/images/card-fon.png);
 	background-position: bottom right;
 	background-repeat: no-repeat;
-	width: -moz-min-content;
-	width: min-content;
+	/*width: -moz-min-content;*/
+	/*width: min-content;*/
 	border: 0;
 	font-size: 1em;
 	box-shadow: 1.25em 1.43em 1.625em 0 rgba(0, 0, 0, 0.26);
@@ -576,7 +583,8 @@ button.like	{
 	padding-bottom: 2.8em;
 }
 .novosti-container .card img{
-	width: 22.5em;
+	/*width: 22.5em;*/
+	width: 100%;
 }
 .novosti-container .card .card-title	{
 	font-family: CaviarDreams;
@@ -648,7 +656,7 @@ button.like	{
 }
 
 .festival	{
-	background: url(../images/bg-festival.png) no-repeat center center / cover;
+	background: url(/images/bg-festival.png) no-repeat center center / cover;
 	padding-bottom: 3.125em;
 	position: relative;
 }
@@ -729,7 +737,7 @@ button.like	{
 .statistika-panel-fon	{
 	object-fit: contain;
 	margin-left: auto;
-	background: url(../images/statistika-img.png) no-repeat 34% center / cover;
+	background: url(/images/statistika-img.png) no-repeat 34% center / cover;
 	clip-path: polygon(0 0%, 100% 2%, 100% 100%, 0% 100%);
 
 }
@@ -756,7 +764,7 @@ button.like	{
 	color: #302f2e;
 	margin-bottom: 3.43em;
 }
-.panel-button button	{
+.panel-button a	{
 	outline: none;
 	border: none;
 	border-radius: 4px;
@@ -787,7 +795,7 @@ button.like	{
 }
 .galereya	{
 	padding-bottom: 5.1em;
-	background: url(../images/bg-forma.png) no-repeat center center / cover;
+	background: url(/images/bg-forma.png) no-repeat center center / cover;
 }
 .galereya-panel	{
 	margin: 0 15.6em;
@@ -903,7 +911,7 @@ button.like	{
 .naw-partnyor	{
 	height: 28em;
 	padding-top: 3.125em;
-	background: url(../images/partnyor-fon.png) no-repeat center center / cover;
+	background: url(/images/partnyor-fon.png) no-repeat center center / cover;
 }
 #logos .item  {
 	display: flex;
@@ -971,7 +979,7 @@ button.like	{
 	color: #dba965;
 }
 .footer-container .panel-bg	{
-	background: url(../images/footer-bg.png) no-repeat center center / cover;
+	background: url(/images/footer-bg.png) no-repeat center center / cover;
 	width:27em;
 	padding: 4em 2.875em 2.2em 3.375em;
 }
@@ -1095,13 +1103,25 @@ footer .rteco	{
 	/* height: 100%; */
 	object-fit: cover;
 }
+
+button.like {
+	max-width: 16em;
+}
+
+button.like span {
+	display: none;
+	line-height: 1.9;
+	font-weight: bold;
+	font-family: CaviarDreamsBold;
+}
+
 @media only screen  and (max-width: 1366px)	{
-	.container	{
-		max-width: 1050px;
-	}
-	.news.container	{
-		max-width: 800px;
-	}
+	/*.container	{*/
+		/*max-width: 1050px;*/
+	/*}*/
+	/*.news.container	{*/
+		/*max-width: 800px;*/
+	/*}*/
 }
 @media only screen and (min-width : 1920px)	{
 	.forma-container, .festival-container, .galereya-container	{

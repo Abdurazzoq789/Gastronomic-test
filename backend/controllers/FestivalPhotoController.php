@@ -71,16 +71,15 @@ class FestivalPhotoController extends Controller
 
         if ($model->load(Yii::$app->request->post())) {
 
-        $model->file = UploadedFile::getInstance($model,'file');
-        $imageName = $model->file->baseName;
-        $model->file->saveAs('uploads/'.$imageName.'.'.$model->file->extension );
-
-
-        $model->photo = 'uploads/'.$imageName.'.'.$model->file->extension;
-        $model->save();
-
-            return $this->redirect(['view', 'id' => $model->id]);
+            $model->file = UploadedFile::getInstance($model,'file');
+            $imageName = $model->file->baseName;
+            $model->file->saveAs('uploads/'.$imageName.'.'.$model->file->extension );
+    
+    
+            $model->photo = './images/'.$imageName.'.'.$model->file->extension;
+            $model->save();
             
+            return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('create', [
@@ -99,7 +98,16 @@ class FestivalPhotoController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())) {
+
+            $model->file = UploadedFile::getInstance($model,'file');
+            $imageName = $model->file->baseName;
+            $model->file->saveAs('uploads/'.$imageName.'.'.$model->file->extension );
+    
+    
+            $model->photo = './images/'.$imageName.'.'.$model->file->extension;
+            $model->save();
+            
             return $this->redirect(['view', 'id' => $model->id]);
         }
 

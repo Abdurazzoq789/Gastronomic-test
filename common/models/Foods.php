@@ -95,4 +95,10 @@ class Foods extends \yii\db\ActiveRecord
     {
         return new \common\models\query\FoodsQuery(get_called_class());
     }
+
+    public function getLink() {
+        return \Yii::$app->urlManager->createUrl([
+            'foods/show'
+        ]);
+    }
 }

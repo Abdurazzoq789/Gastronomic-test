@@ -1,15 +1,25 @@
 $(document).ready(function(){
+    var counter = 0;
     var isLiked = false
     $('.like').click(function(){
-      isLiked = !isLiked;
-      if(isLiked) {
-          $(this).children('.yurak').hide();
-          $(this).children('.clicked-like').show();
+        counter++;
+      if(!isLiked) {
+          isLiked = !isLiked;
+
+          $(this).children('span').text(counter)
+          $(this).children('.yurak').fadeOut(100);
+          $(this).children('span').delay(100).fadeIn(300);
+
+          var vsId = $(this).data('vs-id');
+          var like = $(this).data('like');
+
+          $.post('/site/vote', {
+                  id: vsId,
+                  like: like
+              }, function(data, status) {}
+          );
+
       }
-      else{
-        $(this).children('.yurak').show();
-        $(this).children('.clicked-like').hide();
-    }
     })
 
     var isVisible=false
@@ -18,7 +28,7 @@ $(document).ready(function(){
     $('.lang-toggler').click(function(){
         $('.other-lang').slideToggle(200);
         $('.chervon').toggleClass('rotate');
-        $(".wrapp").toggle();  
+        $(".wrapp").toggle();
         if(isVisible)   {
             $('.search-form').hide(200);
             isVisible = false
@@ -51,6 +61,15 @@ $(document).ready(function(){
             $(this).find('.not-click').attr('src', './images/Clickedlike.svg');
             $(this).find('.not-click').delay(500).addClass('countAnim');
             $(this).find('.like-count').delay(500).fadeIn(200);
+
+            var restId = $(this).data('restid');
+            var like = $(this).data('like');
+
+            $.post('/restaurant/vote', {
+                    id: restId,
+                    like: like
+                }, function(data, status) {}
+            );
         });         
 
     var carouselEl = $('#festival');
@@ -65,6 +84,10 @@ $(document).ready(function(){
 
     $(".prev").click(function() {
         carouselEl.trigger('prev.owl.carousel');
+    });
+
+    $('.form-submit').click(function() {
+        $('.forma').submit();
     });
 })
 

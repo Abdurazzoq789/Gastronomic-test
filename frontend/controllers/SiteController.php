@@ -17,6 +17,7 @@ use frontend\models\ContactForm;
 use common\models\Restaurant;
 use common\models\RestaurantPhoto;
 use common\models\Foods;
+use common\models\Contact;
 use common\models\News;
 use common\models\Festival;
 
@@ -82,9 +83,37 @@ class SiteController extends Controller
     {
         $restaurants = Restaurant::find()->orderBy(['id' => SORT_DESC])->limit(4)->all();
         $foods = Foods::find()->orderBy(['id' => SORT_ASC])->limit(4)->all();
+        $versusUz = Foods::findOne([
+            'foodCountry' => 'Uzbek',
+            'type' => 'salat',
+        ]);
+        $versusTurk = Foods::findOne([
+            'foodCountry' => 'Turk',
+            'type' => 'salat',
+        ]);
+
+        $contact = new Contact();
+        if (\Yii::$app->request->isPost && $contact->load(\Yii::$app->request->post())) {
+            $contact->save();
+        }
+        $news = News::find()->orderBy(['id'=> SORT_DESC])->limit(6)->all();
+        $festivals = Festival::find()->orderBy(['id'=> SORT_DESC])->limit(3)->all();
+
+        $restaurantsCount = Restaurant::find()->count("*");
+        $membersCount = Restaurant::find()->count("*");
+        $festivalsCount = Festival::find()->count("*");
+
         return $this->render('index',[
             'restaurants' => $restaurants,
             'foods' => $foods,
+            'versusUz' => $versusUz,
+            'versusTurk' => $versusTurk,
+            'contact' => $contact,
+            'news' => $news,
+            'festivals' => $festivals,
+            'restaurantsCount' => $restaurantsCount,
+            'membersCount' => $membersCount,
+            'festivalsCount' => $festivalsCount,
         ]);
     }
 
