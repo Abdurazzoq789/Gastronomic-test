@@ -19,6 +19,13 @@ use Yii;
  */
 class Foods extends \yii\db\ActiveRecord
 {
+
+    const TYPES = [
+        'ovqat' => 'Ovqat',
+        'salat' => 'Salat',
+        'desert' => 'Desert',
+        'ichimlik' => 'Ichimlik',
+    ];
     /**
      * {@inheritdoc}
      */
@@ -38,6 +45,7 @@ class Foods extends \yii\db\ActiveRecord
             [['restaurant_id'], 'integer'],
             [['name'], 'string', 'max' => 100],
             [['type','foodCountry'], 'string', 'max' => 45],
+            [['type'], 'default', 'value' => static::TYPES['Ovqat']],
             [['ingredient'], 'string', 'max' => 255],
             [['restaurant_id'], 'exist', 'skipOnError' => true, 'targetClass' => Restaurant::className(), 'targetAttribute' => ['restaurant_id' => 'id']],
         ];

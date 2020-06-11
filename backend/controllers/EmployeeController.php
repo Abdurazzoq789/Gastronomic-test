@@ -8,6 +8,7 @@ use common\models\EmployeeSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * EmployeeController implements the CRUD actions for Employee model.
@@ -66,8 +67,19 @@ class EmployeeController extends Controller
     {
         $model = new Employee();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+
+        if ($model->load(Yii::$app->request->post())) {
+
+        $model->file = UploadedFile::getInstance($model,'file');
+        $imageName = $model->file->baseName;
+        $model->file->saveAs('uploads/'.$imageName.'.'.$model->file->extension );
+
+
+        $model->photo = '/images/'.$imageName.'.'.$model->file->extension;
+        $model->save();
+        
+        return $this->redirect(['view', 'id' => $model->id]);
+
         }
 
         return $this->render('create', [
@@ -86,8 +98,18 @@ class EmployeeController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())) {
+
+            $model->file = UploadedFile::getInstance($model,'file');
+            $imageName = $model->file->baseName;
+            $model->file->saveAs('uploads/'.$imageName.'.'.$model->file->extension );
+    
+    
+            $model->photo = '/images/'.$imageName.'.'.$model->file->extension;
+            $model->save();
+            
             return $this->redirect(['view', 'id' => $model->id]);
+    
         }
 
         return $this->render('update', [

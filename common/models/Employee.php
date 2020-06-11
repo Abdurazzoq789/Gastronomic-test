@@ -19,6 +19,7 @@ use Yii;
  */
 class Employee extends \yii\db\ActiveRecord
 {
+    public $file;
     /**
      * {@inheritdoc}
      */
@@ -34,6 +35,7 @@ class Employee extends \yii\db\ActiveRecord
     {
         return [
             [['restaurant_id', 'role'], 'required'],
+            [['file'],'file'],
             [['restaurant_id'], 'integer'],
             [['firstName', 'lastName', 'role', 'photo', 'phoneNumber'], 'string', 'max' => 50],
             [['restaurant_id'], 'exist', 'skipOnError' => true, 'targetClass' => Restaurant::className(), 'targetAttribute' => ['restaurant_id' => 'id']],
@@ -47,6 +49,7 @@ class Employee extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
+            'file' => 'Photo',
             'restaurant_id' => 'Restaurant ID',
             'firstName' => 'First Name',
             'lastName' => 'Last Name',

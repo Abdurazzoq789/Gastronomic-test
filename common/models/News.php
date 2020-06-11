@@ -32,6 +32,8 @@ class News extends \yii\db\ActiveRecord
         return [
             [['date'], 'safe'],
             [['description'], 'string'],
+            [['viewed'],'integer'],
+            [['viewed'], 'default', 'value' => 0],
             [['title'], 'string', 'max' => 45],
         ];
     }
@@ -76,9 +78,20 @@ class News extends \yii\db\ActiveRecord
         return new \common\models\query\NewsQuery(get_called_class());
     }
 
+    public function getPrettyDate() {
+        $date=date_create($this->date);
+        $day = date_format($date, 'd');
+        $month = date_format($date, 'F');
+
+        return $day . " " . ($month);
+
+        return Yii::$app->formatter->asDatetime($this->date,'dd MMMM');
+    }
+
     public function getLink() {
         return \Yii::$app->urlManager->createUrl([
-            'news/show'
+            'news/show',
+            'id' => $this->id,
         ]);
     }
 }

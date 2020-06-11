@@ -20,7 +20,8 @@
         "yiisoft/yii2-bootstrap4": "^2.0",
         "mihaildev/yii2-ckeditor": "*",
         "kartik-v/yii2-widget-datepicker": "@dev",
-        "kartik-v/yii2-widget-datetimepicker": "dev-master"
+        "kartik-v/yii2-widget-datetimepicker": "dev-master",
+        "kop/yii2-scroll-pager": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

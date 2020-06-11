@@ -44,6 +44,11 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'restaurant/region/<region:\w+>' => 'restaurant/region',
+                'food/show/<id:\w+>' => 'food/show',
+                'restaurant/show/<id:\w+>' => 'restaurant/show',
+                'restaurant/foods/<id:\w+>/<type:\w+>' => 'restaurant/foods',
+                'news/show/<id:\w+>' => 'news/show',
             ],
         ],
         

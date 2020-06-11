@@ -26,14 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            [
-                'attribute' => 'photo',
-                'format' => 'html',    
-                'value' => function ($data) {
-                    return Html::img(Yii::getAlias('@web').'/'. $data['photo'],
-                        ['width' => '70px']);
-                },
-            ],
+            'photo',
             'news.title',
 
             ['class' => 'common\grid\ActionColumn'],

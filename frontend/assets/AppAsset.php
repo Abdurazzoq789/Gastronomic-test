@@ -19,6 +19,14 @@ class AppAsset extends AssetBundle
         'css/animate.css',
         'css/styles2.css',
         'css/responsive.css',
+        'css/Onas.css',
+        'css/novosti.css',
+        'css/top10.css',
+        'css/topRest.css',
+        'css/rest1.css',
+        'css/food.css',
+        'css/salat.css',
+        'css/novostiPodrobiye.css',
     ];
 
     public $js = [

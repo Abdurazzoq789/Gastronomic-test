@@ -82,6 +82,12 @@ class Restaurant extends \yii\db\ActiveRecord
         return $this->hasMany(Foods::className(), ['restaurant_id' => 'id']);
     }
 
+    public function getFood()
+    {
+        return $this->hasOne(Foods::className(), ['restaurant_id' => 'id']);
+    }
+    
+
     /**
      * Gets query for [[RestaurantPhotos]].
      *
